@@ -1,0 +1,53 @@
+{
+  "blogs": [
+    {
+      "title": "Adam Tryster",
+      "body": "All user details will be displayed here",
+      "memno": "63074498",
+      "policy": "House",
+      "id": 2
+    },
+    {
+      "title": "Luke Jason",
+      "body": "All user details will be displayed here",
+      "memno": "482947973",
+      "policy": "Car",
+      "id": 3
+    },
+    {
+      "title": "Trisha Nook",
+      "body": "All user details will be displayed here",
+      "memno": "6849375947",
+      "policy": "House & Car",
+      "id": 4
+    },
+    {
+      "title": "Jaymee Smith",
+      "body": "All user details will be displayed here",
+      "memno": "694739574",
+      "policy": "House & Car",
+      "id": 5
+    },
+    {
+      "title": "Lisa Osborn",
+      "body": "All user details will be displayed here",
+      "memno": "059738574",
+      "policy": "House",
+      "id": 6
+    },
+    {
+      "title": "Luke Jaymon",
+      "body": "All user details will be displayed here",
+      "memno": "60584739",
+      "policy": "Car",
+      "id": 7
+    },
+    {
+      "title": "Vinny Tshook",
+      "body": "All user details will be displayed here",
+      "memno": "95838573",
+      "policy": "House & Car",
+      "id": 8
+    }
+  ]
+}

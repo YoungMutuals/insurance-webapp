@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and signup form</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+</head>
+<body class="bg-light" >
+    <h2 class="logo m-lg-4">Young Mutuals</h2>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4 bg-white m-auto rounded-top wrapper">
+                <h2 class="text-center pt-3">Login Now</h2>
+                <!-- This where the form starts -->
+                <form action="#" class="py-3">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        <input type="text" class="form-control" required name="email" id="emailLogin" placeholder="Email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        <input type="password" class="form-control" required name="password" id="password" placeholder="Password">
+                        <span class="input-group-text" id="toggle-password" style="cursor: pointer;"><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="d-grid">
+                        <button type="button" class="btn btn-success" onclick="login()">Login Now</button>
+                        <p class="text-center mt-3">Register Now for free by clicking <a href="index.html">Register Now</a> Button.</p>
+                    </div>
+                </form>
+                <!-- This where the form ends -->
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Function to retrieve data from local storage and pre-fill the login form
+        function populateLoginForm() {
+            var storedData = localStorage.getItem("registrationData");
+
+            if (storedData) {
+                var formData = JSON.parse(storedData);
+                document.getElementById("emailLogin").value = formData.Email || "";
+            }
+        }
+
+        // Toggle password visibility
+        document.getElementById("toggle-password").addEventListener("click", function() {
+            var passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+            } else {
+                passwordField.type = "password";
+            }
+        });
+
+        // Function to handle login
+        function login() {
+            var enteredEmail = document.getElementById("emailLogin").value;
+            var enteredPassword = document.getElementById("password").value;
+
+            // Retrieve stored data from local storage
+            var storedData = localStorage.getItem("registrationData");
+
+            if (storedData) {
+                var formData = JSON.parse(storedData);
+                var storedEmail = formData.Email;
+                var storedPassword = formData.Password;
+
+                // Check if entered email and password match stored values
+                if (enteredEmail === storedEmail && enteredPassword === storedPassword) {
+                    alert("Login successful!");
+                    // Redirect to a new page or perform other actions here
+                } else {
+                    alert("Login failed. Please check your email and password.");
+                }
+            } else {
+                alert("No registration data found. Please register first.");
+            }
+        }
+
+    </script>
+    </script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and signup form</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/all.min.css">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+
+</head>
+<body class="bg-light" >
+    <h2 class="logo m-lg-4">Young Mutuals</h2>
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-lg-4 bg-white m-auto rounded-top wrapper">
+                <h2 class="text-center pt-3">Signup Now</h2>
+                <p class="text-center text-muted lead mb-3">Helping our customers thrive and
+                    supporting the communities we serve.</p>
+                <!-- This where the form starts -->
+                <form id="registrationForm">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" required name="firstName" id="firstName" placeholder="First Name">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        <input type="text" class="form-control" required name="lastName" id="lastName" placeholder="Last Name">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        <input type="text" class="form-control" required name="email" id="email" placeholder="Email">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        <input type="password" class="form-control" required name="password" id="password" placeholder="Password">
+                        <span class="input-group-text" id="toggle-password" style="cursor: pointer;"><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        <input type="password" class="form-control" required name="confirmPassword" id="confirmPassword" placeholder="Confirm Password">
+                        <span class="input-group-text" id="toggle-password-confirm" style="cursor: pointer;"><i class="fa fa-eye"></i></span>
+                    </div>
+                    <div class="d-grid">
+                        <input type="submit" class="btn btn-success" value="Sign Up Now" id="signupButton">
+                        <p class="text-center text-muted mt-2">When you register by clicking the Sign Up button, you agree to our <a href="#">Terms and Conditions</a> and <a href="#">Privacy Policy.</a></p>
+                        <p class="text-center">Already have an account? <a href="login.html">Login Here</a></p>
+                    </div>
+                </form>
+            
+                <!-- This where the form ends -->
+            </div>
+
+        </div>
+    </div>
+    
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script>
+         // Function to check if the email contains an "@" sign
+         function validateEmail(email) {
+            var regex = /\S+@\S+\.\S+/;
+            return regex.test(email);
+        }
+// Event listener for form submission
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            // Get form input values
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+
+            // Create an object to store the form data
+            var formData = {
+                "First Name": firstName,
+                "Last Name": lastName,
+                "Email": email,
+                "Password": password,
+                "Confirm Password": confirmPassword
+            };
+
+            // Store the form data in local storage
+            localStorage.setItem("registrationData", JSON.stringify(formData));
+
+            // Redirect to login.html
+            window.location.href = "login.html";
+        });
+
+    </script>
+</body>
+</html>
